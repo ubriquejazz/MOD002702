@@ -1,0 +1,6 @@
+Francisco Javier Martínez;11111111A;5;7
+Diosdado Sánchez;22222222B;5;7
+Germán Roche;33333333C;5;7
+José Javier Bermúdez;44444444D;5;7
+Milagros Solvas;55555555E;5;7
+Sandra Rentero;66666666F;5;7

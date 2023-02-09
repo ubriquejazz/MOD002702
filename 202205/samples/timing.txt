@@ -1,0 +1,47 @@
+## 1. Elementos de un programa informático
+    Contenidos
+    Tiempo estimado de duración
+    Procedimientos
+    Actividades de aprendizaje y criterios de evaluación
+
+## 2. Programación orientada a objetos. Objetos
+    Contenidos
+    Tiempo estimado de duración
+    Procedimientos
+    Actividades de aprendizaje y criterios de evaluación
+ 
+## 3. Estructuras básicas de control
+    Contenidos
+    Tiempo estimado de duración
+    Procedimientos
+    Actividades de aprendizaje y criterios de evaluación
+    
+## 4. Programación orientada a objetos. Clases
+    Contenidos
+    Tiempo estimado de duración
+    Procedimientos
+    Actividades de aprendizaje y criterios de evaluación
+    
+## 5. P.O.O. Utilización avanzada de clases
+    Contenidos
+    Tiempo estimado de duración
+    Procedimientos
+    Actividades de aprendizaje y criterios de evaluación
+ 
+## 6. Lectura y escritura de información
+    Contenidos
+    Tiempo estimado de duración
+    Procedimientos
+    Actividades de aprendizaje y criterios de evaluación
+ 
+## 7. Estructuras de almacenamie nto
+    Contenidos
+    Tiempo estimado de duración
+    Procedimientos
+    Actividades de aprendizaje y criterios de evaluación
+    
+## 8. Bases de datos relacionales
+    Contenidos
+    Tiempo estimado de duración
+    Procedimientos
+    Actividades de aprendizaje y criterios de evaluación
