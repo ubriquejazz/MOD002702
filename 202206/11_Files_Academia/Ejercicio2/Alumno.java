@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class Alumno implements Serializable{
+public class Alumno implements Serializable {
 	private String nombre;
 	private String apellidos;
 	private int edad;

@@ -10,7 +10,6 @@ public class EjemploArrayList066 {
   public static void main(String[] args) {
 
     ArrayList<String> a = new ArrayList<String>();
-
     a.add("rojo");
     a.add("verde");
     a.add("azul");
@@ -20,9 +19,8 @@ public class EjemploArrayList066 {
     System.out.println("Contenido de la lista: ");
     System.out.println(a);
 
+    System.out.println("Después de borrar las palabras que contienen la letra \"a\": ");
     a.removeIf(palabra -> palabra.contains("a"));
-
-    System.out.println("Contenido de la lista después de borrar las palabras que contienen la letra \"a\": ");
     System.out.println(a);
 
   }

@@ -1,14 +1,7 @@
 import java.io.*;
 
-/**
- * Programa para trabajar con archivos de texto.
- * @profesorado
- */
 public class Ejercicio1 {
     
-    /**
-    * Método principal.
-    */
     public static void main(String args[]){
 
         //----------------------------------------------
@@ -21,6 +14,7 @@ public class Ejercicio1 {
         //String rutaCoeficientres = System.getProperty("user.dir") + "/recursos/coeficientes.txt";
 		String rutaCoeficientes = "coeficientes.txt";
         File fCoef = new File(rutaCoeficientes);
+        
         //String rutaListado = System.getProperty("user.dir") + "/recursos/listadoAlumnos.txt";
 		String rutaListado = "listadoAlumnos.txt";
         File fListado = new File(rutaListado);
@@ -88,9 +82,6 @@ public class Ejercicio1 {
         //----------------------------------------------
         System.out.println ();
 		System.out.println ("Archivos cerrados y procesamento finalizado");
-		System.out.println ("---------");
-        System.out.println ();
-		System.out.println ("Fin del programa.");
     }
     
     /**

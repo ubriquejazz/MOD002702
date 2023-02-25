@@ -11,27 +11,20 @@ import java.io.IOException;
  */
 class EjemploFichero01 {
   public static void main(String[] args) {
-    
+    String fichero = "malaga.txt";
     try {  
-
-      FileReader file = new FileReader("malaga.txt");
-      BufferedReader br = new BufferedReader();      
+      BufferedReader br = new BufferedReader(new FileReader(fichero));      
       String linea = "";
-      
       while (linea != null) {
         System.out.println(linea);
         linea = br.readLine();
       } 
-    
       br.close();
       
     } catch (FileNotFoundException fnfe) { // qué hacer si no se encuentra el fichero
-      System.out.println(fnfe);
-      //System.out.println("No se encuentra el fichero malaga.txt");
+      System.out.println("No se encuentra " + fichero);
     } catch (IOException ioe) { // qué hacer si hay un error en la lectura del fichero
- 
-      System.out.println("No se puede leer el fichero malaga.txt");
- 
+      System.out.println("No se puede leer " + fichero);
     }
   }
 }
