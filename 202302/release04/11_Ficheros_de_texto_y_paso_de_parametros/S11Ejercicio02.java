@@ -11,14 +11,18 @@ import java.io.IOException;
 class S11Ejercicio02 {
   public static void main(String[] args) {
     try {
-      BufferedReader br = new BufferedReader(new FileReader("primos.dat"));
-      
+      BufferedReader br = new BufferedReader(new FileReader("datos.txt"));
+      int suma = 0;
       String linea = "";
-      while (linea != null) {
-        System.out.print(linea + " ");
+      do {
         linea = br.readLine();
-      } 
+        if (linea != null) {
+          suma += Integer.parseInt(linea);
+          System.out.print(linea + " ");
+        }
+      } while (linea != null) ;
       System.out.println();
+      System.out.println("La suma total es " + suma);
       br.close();
       
     } catch (IOException e) {
