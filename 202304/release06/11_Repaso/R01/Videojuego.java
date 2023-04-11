@@ -4,10 +4,23 @@ public class Videojuego {
     int anno;       // deberá estar entre 1970 y 2100
     int valoracion; // número entre 0 y 100.
 
+    public Videojuego(String nombre, int anno, int valoracion) {
+        this.nombre = nombre;
+        this.anno = anno;
+        this.valoracion = valoracion;
+    }
+
     // los sets deberán tener en cuenta las restricciones para cada atributo
-    ▪ Plataforma plataforma, que será la plataforma en la que salió el
-    juego. Se usará el enum que viene en el programa principal.
-    
-    ▪ TipoJuego tipoJuego, que será el tipo de juego. Se usará el enum
-    que viene en el programa principal.
+    public void  setNombre(String nuevo) {
+        this.nombre = nuevo;
+    }
+
+    public void setAnno(int nuevo) {
+        this.anno = nuevo;
+    }
+
+    @Override
+    public String toString() {
+        return nombre + "\t" + anno + "\t" + valoracion;
+    }
 }
