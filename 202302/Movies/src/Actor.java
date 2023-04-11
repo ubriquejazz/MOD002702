@@ -1,24 +1,23 @@
-import java.time.LocalDate;
+package com.mycompany.movies;
 
 public class Actor {
-
+  
     private int id;
-
     private String nombre;
-    private LocalDate fNac;
+    private String pais;
 
-    public Actor (int id, String nombre, LocalDate fNac) {
-        this.fNac = fNac;
+    public Actor (int id, String nombre, String pais) {
+        this.pais = pais;
         this.id = id;
         this.nombre = nombre;
     }
 
-    public LocalDate getfNac() {
-        return fNac;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     public void setId(int id) {
@@ -27,6 +26,6 @@ public class Actor {
 
     @Override
     public String toString() {
-        return "Actor " + this.nombre + " (" + id + ")";
-    }
+        return "Actr " + id + ", " + nombre + " (" + pais + ")";
+    }   
 }

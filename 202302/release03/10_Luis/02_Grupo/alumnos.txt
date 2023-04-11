@@ -1,0 +1,6 @@
+Nombre: Juan, Edad: 20, Calificacion: 7.5
+Nombre: Ana, Edad: 19, Calificacion: 8.0
+Nombre: Pedro, Edad: 21, Calificacion: 6.5
+Nombre: Juan, Edad: 20, Calificacion: 7.5
+Nombre: Ana, Edad: 19, Calificacion: 8.0
+Nombre: Pedro, Edad: 21, Calificacion: 6.5
