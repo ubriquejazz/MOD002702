@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Ejemplo de uso de la clase ArrayList
@@ -21,7 +22,7 @@ public class EjemploArrayList02 {
       System.out.println(a.get(i));
     }
     System.out.println(a);
-    // System.out.println(a.toString());
-    // System.out.println(Arrays.toString(a.toArray()));
+    System.out.println(a.toString());
+    System.out.println(Arrays.toString(a.toArray()));
   }
 }
