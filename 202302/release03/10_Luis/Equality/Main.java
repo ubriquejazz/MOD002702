@@ -2,18 +2,15 @@ public class Main {
 
    public static void main(String []args) {
 
-      Company c = new Company();
-      c.create("Rafael");
-      c.create("Pepe");
-      c.create("Auxi");
-      System.out.println(c.toString());
-
-      String elem = "Rafael";
-      System.out.println(c.idxOf(elem) + "/" + c.read(elem));
-      
+      Company c = new Company("datos.csv");
+      c.create("Luis", 101);
+      c.create("Juan", 102);
+      c.create("Paco", 99);
+      System.out.println(c);
       c.update("Rafael", "Rafa");
+      System.out.println(c.read("Rafa"));
       c.delete("Auxi");
-      System.out.println(c.toString());
-
+      System.out.println(c);
+      c.save("datos_procesados.csv");
    }
 }

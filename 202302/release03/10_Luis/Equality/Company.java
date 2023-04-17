@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Company {
@@ -5,6 +9,21 @@ public class Company {
     //  lista de empleados
     private ArrayList<Employee> l = new ArrayList<Employee>();
     
+    public Company(String fichero) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fichero))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] fila = linea.split(",");
+                int id = Integer.parseInt(fila[0]);
+                float salary = Float.parseFloat(fila[2]);
+                Employee employee = new Employee(id, fila[1],salary);
+                l.add(employee);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean isEmpty() {
         return l.isEmpty();
     }
@@ -18,12 +37,12 @@ public class Company {
     }
 
     // CRUD Employee - Create
-    public void create(String name) {
+    public void create(String name, float salary) {
         Employee aux = null;
         do {
-            aux = new Employee(name);
-        } while (l.contains(aux));  // inderectamente usa Employee.equals()
-        l.add(aux);                 // ArrayList
+            aux = new Employee(name, salary);
+        } while (l.contains(aux));
+        l.add(aux);                
     }
 
     // CRUD Employee - Delete
@@ -46,13 +65,12 @@ public class Company {
     }
 
     // CRUD Employee - Read
-    public int read(String name) {
+    public Employee read(String name) {
         int idx = this.idxOf(name);
         if (idx >= 0) {
-            Employee aux = l.get(idx);
-            return aux.hashCode();
+            return l.get(idx);
         }        
-        return (-1);
+        return null;
     }
 
     @Override
@@ -60,4 +78,14 @@ public class Company {
         return l.toString();
     }
 
+    public void save(String fichero){
+        try (FileWriter fw = new FileWriter(fichero)) {
+            for (Employee employee : l) {
+                String linea = employee.getId() + "," + employee.getName() + "," + employee.getSalary();
+                fw.write(linea + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

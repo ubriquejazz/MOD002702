@@ -170,12 +170,12 @@ public class CineDB {
             ResultSet rs = this.statement.executeQuery(consulta);
             while(rs.next())  {
                 Pelicula nuevo = new Pelicula(
-                      rs.getInt("id"),
-                   rs.getString("titulo"),
-                     rs.getInt("anno"),
-                rs.getBoolean("tieneOscar"),
-                rs.getDouble("valoracion"));
-                retVal.add(nuevo);
+                    rs.getInt("id"),
+                    rs.getString("titulo"),
+                    rs.getInt("anno"),
+                    rs.getBoolean("tieneOscar"),
+                    rs.getDouble("valoracion"));
+                    retVal.add(nuevo);
             }
         } catch (SQLException ex) {
             System.err.println(consulta + "\n" + ex.getMessage());

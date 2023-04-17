@@ -3,10 +3,28 @@ import java.util.Objects;
 public class Employee {
     private int id;
     private String name;
+    private float salary;
 
-    public Employee(String name) {
+    public Employee(int id, String name, float salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public Employee(int id, String name) {
+        this.id = id;
+        this.name = name;
+        this.salary = 10;
+    }
+
+    public Employee(String name, float salary) {
         this.id = (int)(Math.random()*1000);
         this.name = name;
+        this.salary = salary;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -17,9 +35,17 @@ public class Employee {
         this.name = name;
     }
     
+    public float getSalary() {
+        return salary;
+    }
+
+    public void setSalary(float salary) {
+        this.salary = salary;
+    }
+    
     @Override
     public String toString() {
-        return "{id="+id+", name="+name+"} ";
+        return "{"+id+"} " + name + ", " + salary + "$";
     }
 
     @Override
@@ -35,11 +61,6 @@ public class Employee {
         if(employee.id == this.id) {
             return true; 
         } else return false;
-    }
-
-    public int hashCode() {
-         // here we are using id. We can also use other logic such as prime number addition or memory address.
-        return id;
     }
 
 }
