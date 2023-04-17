@@ -1,7 +1,7 @@
 ## Release 03 y 04
 - OOP Programming (T09)
 - Colecciones (T10)
-- Ejercicios de Luis
+- Ejercicios de Luis (T10)
 
 ## Release 05
 - Ficheros (11.1)
