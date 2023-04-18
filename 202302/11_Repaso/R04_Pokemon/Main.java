@@ -17,6 +17,13 @@ class Main {
         String miPokemon = "";
         Pokemon obj = null;
         Pokedex g = new Pokedex("pokemon.csv");
+        System.out.println(g);
+    }
+
+    public static void test02() {
+        String miPokemon = "";
+        Pokemon obj = null;
+        Pokedex g = new Pokedex("pokemon.csv");
         // System.out.println(g);
         
         miPokemon = "Bulbasaur";
@@ -30,15 +37,16 @@ class Main {
             g.capturaPokemon(miPokemon);
 
         }
-        System.out.println(g.toStringCapturado());
+        //System.out.println(g.toStringCapturado());
+        g.guardaCSV("capturas_de_hoy.csv");
     }
 
-    public static void test02() {
+    public static void test03() {
         Pokedex g = new Pokedex();
         System.out.println(g);
     }
 
     public static void main(String[] args) {
-        test01();
+        test02();
     }
 }

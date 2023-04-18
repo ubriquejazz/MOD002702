@@ -48,10 +48,10 @@ public class Pokemon {
     public String toString() {
         String s = id + " - " + nombre;
         if (capturado) {
-            s = " (" + tipo1 +  ", " + tipo2 + ") " + 
+            s += " (" + tipo1 +  ", " + tipo2 + ") " + 
                 "v1:" + ataque + "; v2:" + ataqueespecial+
-                "v3:" + defensa + "; v4:" + defensaespecial+
-                "v5:" + vida + "; v6:" + velocidad;
+                "; v3:" + defensa + "; v4:" + defensaespecial+
+                "; v5:" + vida + "; v6:" + velocidad;
         }
         return s;
     }

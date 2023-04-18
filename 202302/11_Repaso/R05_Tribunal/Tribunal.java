@@ -1,5 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Arrays;
 
 public class Tribunal {
 
@@ -59,19 +61,72 @@ public class Tribunal {
         System.out.println(l.get(vocal));        
     }
 
-    public void EligeTribunal() {
+    public void EligeTribunalConGenero() {
         int genero_vocal = 1;
-        int vocal;
-        int presi = (int)(Math.random()*tamano + 1); 
+        int presi, vocal;
+        
+        presi = (int)(Math.random()*tamano); 
         System.out.println(l.get(presi));
+
+        // actualiza genero del vocal
         if (l.get(presi).getGenero() == 1) {
             genero_vocal = 0;
         }
-        int vocal = (presi + 1) %tamano;
+        
+        // indice del vocal
+        vocal = (presi + 1) %tamano;
         while (l.get(vocal).getGenero() != genero_vocal) {
-            vocal = presi%tamano + 1;
+            vocal = (vocal + 1) %tamano; 
+            // System.out.println(vocal);
         }
         System.out.println(l.get(vocal));
+    }
+    
+    private boolean existe(int historia[], int nuevo) {
+        boolean retVal = false;
+        for (int i=0; i<historia.length; i++) {
+            if (historia[i] == nuevo)
+                retVal = true;
+        }
+        return retVal;
+    }
+
+    public void EligeTribunal() {
+        // Contadores para hombres y mujeres seleccionados
+        int maleCnt = 0;
+        int femesCnt = 0;
+
+        // Profesor seleccionado
+        int aleatorio;
+        Profesor profeSeleccionado;
+
+        // Arraylist para almacenar los profes seleccionadas
+        ArrayList<Profesor> seleccionadas = new ArrayList<>();
+
+        // contador de coincidencias
+        int historia[] = {-1,-1,-1,-1,-1,-1,-1,-1,-1};
+        int cnt = 0; 
+
+        // Generador de números aleatorios
+        Random random = new Random();
+
+        // Iterar sobre el ArrayList de personas hasta seleccionar 2 hombres y 2 mujeres
+        while (maleCnt < 2 || femesCnt < 2) {
+            do {
+                aleatorio = random.nextInt(tamano);
+            } while (existe(historia, aleatorio));
+            historia[cnt++]=aleatorio;
+            profeSeleccionado = l.get(aleatorio);
+            if (profeSeleccionado.getGenero() == 1 && maleCnt < 2) {
+                seleccionadas.add(profeSeleccionado);
+                maleCnt++;
+            }
+            else if (profeSeleccionado.getGenero() == 0 && femesCnt < 2) {
+                seleccionadas.add(profeSeleccionado);
+                femesCnt++;
+            }
+        }
+        System.out.println(seleccionadas);
     }
 
 }

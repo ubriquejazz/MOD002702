@@ -36,7 +36,7 @@ public class Pokedex {
     } 
 
     public int capturaPokemon(String nombre) {
-        int retVal = 0;
+        int retVal = -1;
         for (Pokemon a : lista) {
             if (a.getNombre().equals(nombre)) {
                 retVal = a.getId();
@@ -125,7 +125,7 @@ public class Pokedex {
         return s; 
     }
 
-    public String toStringCapturado() {
+    public String listadoPokemonCapturado() {
         String s = "";
         for (Pokemon a : lista) {
             if (a.getCapturado())
@@ -133,4 +133,24 @@ public class Pokedex {
         }
         return s; 
     }
+
+    public String listadoPokemonTipo(String tipo) {
+        String s = "";
+        for (Pokemon a : lista) {
+            if (a.getTipo1().equals(tipo) == true)
+                s += a.toString() + "\n";
+        }
+        return s; 
+    }
+
+    public String listadoPokemonCapturadosTipo(String tipo) {
+        String s = "";
+        for (Pokemon a : lista) {
+            if (a.getCapturado() && a.getTipo1().equals(tipo))
+                s += a.toString() + "\n";
+        }
+        return s; 
+    }
+
+
 }
