@@ -14,7 +14,7 @@ public class Employee {
     public Employee(int id, String name) {
         this.id = id;
         this.name = name;
-        this.salary = 10;
+        this.salary = (float)999.9;
     }
 
     public Employee(String name, float salary) {

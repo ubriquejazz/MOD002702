@@ -16,8 +16,8 @@ public void main() {
     int cont_pos, cont_neg;
     float media_pos, media_neg;
     int num = sc.nextInt() 
-    while (num != 0) {
-        if (num >0) {
+    while (num != 0) {          // 1
+        if (num >0) {           // 2
             cont_pos++;
             suma_pos += num;
         }
@@ -27,11 +27,11 @@ public void main() {
         }
         num = sc.nextInt()
     }
-    if (cont_pos != 0) {
+    if (cont_pos != 0) {        // 3
         media_pos = (float) suma_pos / cont_pos;
         System.out.println("Media de los positivos es " + media_pos)
     }
-    if (cont_neg != 0) {
+    if (cont_neg != 0) {        // 4
         media_neg = (float) suma_neg / cont_neg;
         System.out.println("Media de los negativos es " + media_neg)
     }

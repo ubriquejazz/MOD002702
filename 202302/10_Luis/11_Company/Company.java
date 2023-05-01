@@ -1,8 +1,9 @@
-import java.io.BufferedReader;
+// Clase compuesta
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.io.BufferedReader;
 
 public class Company {
 
@@ -16,7 +17,7 @@ public class Company {
                 String[] fila = linea.split(",");
                 int id = Integer.parseInt(fila[0]);
                 float salary = Float.parseFloat(fila[2]);
-                Employee employee = new Employee(id, fila[1],salary);
+                Employee employee = new Employee(id, fila[1], salary);
                 l.add(employee);
             }
         } catch (IOException e) {

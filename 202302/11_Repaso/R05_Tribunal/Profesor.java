@@ -14,7 +14,7 @@ public class Profesor {
     }
 
     public String toString() {
-        return genero + " - " + dni;
+        return genero + " - " + nombre;
     }
     
 }
