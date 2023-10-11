@@ -1,0 +1,85 @@
+$CATEGORY: Q1 - COMPILING A PROGRAMM
+
+::Q101:: 
+High-level language is designed to be easy for humans to read and write. {TRUE}
+
+::Q102:: 
+Low-level language is designed to be easy for a computer to run.  {TRUE}
+
+::Q103:: Examples of high-level languages {
+    ~%50%Python
+    ~%50%C++
+    ~%-100%Machine language
+}
+
+::Q104:: Low-level programs are portable {FALSE}
+
+::Q105:: 
+To interpret is{
+    =To run a high-level program by translating it one line at a time and immediately executing the corresponding instructions.
+    ~To translate a program in a high-level language into a low-level language, all at once, in preparation for later execution.
+}
+
+::Q106:: 
+To compile is{
+    ~To run a high-level program by translating it one line at a time and immediately executing the corresponding instructions.
+    =To translate a program in a high-level language into a low-level language, all at once, in preparation for later execution.
+}
+
+::Q107:: 
+Source code{
+    =A program in a high-level language, before being compiled.
+    ~The output of the compiler, after translating the program.
+}
+
+::Q108::
+Object code{
+    ~A program in a high-level language, before being compiled.
+    =The output of the compiler, after translating the program.
+}
+
+::Q109::
+An executable is another name for object code that is ready to run on specific hardware. {TRUE}
+
+$CATEGORY:Q2 - COMPUTER SCIENCE
+
+::Q201::
+An algorithm is a procedure or formula for solving a problem, with or without a computer.{
+    TRUE}
+
+::Q202::
+Computer science is the scientific and practical approach to computation and its applications. {TRUE}
+
+::Q203::
+A program is a sequence of instructions that specifies how to perform tasks on a computer. {TRUE}
+
+::Q203::
+Basic instructions in a program are {
+    ~%25%input and output
+    ~%25%math
+    ~%25%decision
+    ~%25%repetition (loops)
+    ~%-100%finding the roots of a polynomial
+}
+
+::Q204::
+The application of problem solving to creating executable computer programs is also known as {
+    =programming
+    ~compiling
+    ~computer science
+}
+
+$CATEGORY: Q3 - JAVA
+
+::Q301::
+The meaninng of JVM and JDK is {
+    =Java Virtual Machine and Java Development Kit
+    ~Java Virtual Machine and Java Development Key
+    ~Java Virtual Machine and Java Design Kit
+}
+
+::Q302::
+The JVM enables a computer to run Java programs.{TRUE}
+
+::Q303::
+A byte code is similar to object code, but it is portable like a high-level language.{TRUE}
