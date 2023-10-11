@@ -1,45 +1,12 @@
--- phpMyAdmin SQL Dump
--- version 4.0.10deb1
--- http://www.phpmyadmin.net
---
--- Servidor: localhost
--- Tiempo de generación: 23-08-2014 a las 11:18:07
--- Versión del servidor: 5.5.38-0ubuntu0.14.04.1
--- Versión de PHP: 5.5.9-1ubuntu4.3
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Base de datos: `baloncesto`
---
-CREATE DATABASE IF NOT EXISTS `baloncesto` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `baloncesto`;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `socio`
---
+-- club de blaoncesto
 
 CREATE TABLE IF NOT EXISTS `socio` (
-  `socioID` int(11) NOT NULL,
-  `nombre` varchar(40) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `socioID` int(11) NOT NULL PRIMARY KEY,
+  `nombre` varchar(40) DEFAULT NULL,
   `estatura` int(11) DEFAULT NULL,
   `edad` int(11) DEFAULT NULL,
-  `localidad` varchar(30) COLLATE utf8_spanish2_ci DEFAULT NULL,
-  PRIMARY KEY (`socioID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `socio`
---
+  `localidad` varchar(30) DEFAULT NULL
+);
 
 INSERT INTO `socio` (`socioID`, `nombre`, `estatura`, `edad`, `localidad`) VALUES
 (1235, 'Bermúdez Espada, Ana María', 186, 46, 'Málaga'),
@@ -111,6 +78,3 @@ INSERT INTO `socio` (`socioID`, `nombre`, `estatura`, `edad`, `localidad`) VALUE
 (1301, 'Naranjo González, David', 196, 22, 'Campanillas'),
 (1302, 'Robledo Salazar, Ángel Antonio', 166, 23, 'Campanillas');
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
