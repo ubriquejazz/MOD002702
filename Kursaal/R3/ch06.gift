@@ -1,0 +1,61 @@
+
+$CATEGORY: Q10 - Conditionals and logic
+
+::Q1001:: boolean - A data type with only two possible values, true and false. {TRUE}
+
+::Q1002:: relational operator - compares two values and produces a boolean indicating the relationship between them.{TRUE}
+
+::Q1003:: conditional statement - A statement that uses a condition to determine which statements to execute.{TRUE}
+
+::Q1004:: block - sequence of statements, surrounded by braces, that generally runs as the result of a condition.{TRUE}
+
+::Q1005:: branch - one of the alternative blocks after a conditional statement.{TRUE}
+
+::Q1006:: chaining - {
+    =A way of joining several conditional statements in sequence.
+    ~Putting a conditional statement inside one or both branches of another conditional statement.
+}
+
+::Q1007:: nesting - {
+    ~A way of joining several conditional statements in sequence.
+    =Putting a conditional statement inside one or both branches of another conditional statement.
+}
+
+::Q1008:: logical operator - combines boolean values and produces a boolean value.{TRUE}
+
+::Q1009:: flag - variable (usually boolean) that represents a condition or status.{TRUE}
+
+::Q1001:: validate - to confirm that an input value is of the correct type and within the expected range.{TRUE}
+
+$CATEGORY: Q11 - Loops and strings
+
+::Q1101::
+loop - A statement that executes a sequence of statements repeatedly.{TRUE}
+
+::Q1102::
+loop body - The statements inside the loop.{TRUE}
+
+::Q1103::
+infinite loop - A loop whose condition is always true.{TRUE}
+
+::Q1104::
+iteration - Executing a sequence of statements repeatedly.{TRUE}
+
+::Q1105::
+loop variable - {
+    =A variable that is initialized, tested, and updated in order to control a loop.
+    ~An integer variable or value used to indicate a character in a string.
+}
+
+::Q1106::
+index - {
+    ~A variable that is initialized, tested, and updated in order to control a loop.
+    =An integer variable or value used to indicate a character in a string.
+}
+
+::Q1107::
+Unicode - An international standard for representing characters in most of the languages.{TRUE}
+
+::Q1108::
+empty string - The string which contains no characters and has a length of zero.{TRUE}
+
