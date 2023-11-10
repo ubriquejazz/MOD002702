@@ -1,10 +1,10 @@
 public class Ex63 {
     
-    public static double miPow2(double base, int exponente) {
+    public static double miPow(double base, int exponente) {
         return Math.pow(base, exponente);
     }
 
-    public static double miPow(double base, int exponente) {
+    public static double miPow2(double base, int exponente) {
         double prod = 1.0;
         if (exponente>=0)
             for (int i=0; i<exponente; i++) {
@@ -25,17 +25,23 @@ public class Ex63 {
     }  
 
     public static double gauss(double x, int n){
-        double suma = 0.0; // calculo del sumatorio con un loop
-        for (int i=0; i<n; i++) {
-            suma += miPow(-1, i) * miPow(x, 2*i) / miFact(i); 
+        double sum = 0.0; // calculo del sumatorio con un loop
+    
+        
+        for (int i = 0; i < n; i++) {
+            double term = Math.pow(-1, i) * Math.pow(x, 2 * i) / miFact(i);
+            sum += term;
         }
-        return suma;
+        return sum;
     }
 
     public static void main(String args[]) {
-        double x = 1;
+        double x = -1.5;
+        // "Si es menor que 2 no converge";
         double tmp = -x*x;
-        System.out.printf("Para x = 1 la solucion es %.2f\n",  Math.exp(tmp));
-        System.out.printf("Gauss para n=4 devuelve %.2f\n", gauss(x, 7));
+        System.out.printf("Para x = " + x + " la solucion es %.2f\n",  Math.exp(tmp));
+        for (int n=1; n<200; n++) {
+            System.out.printf("Gauss para n=" + n + " devuelve %.2f\n", gauss(x, n));
+        }
     }
 }
