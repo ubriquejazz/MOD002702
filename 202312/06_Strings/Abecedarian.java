@@ -1,4 +1,4 @@
-public class AbecedarianChecker {
+public class Abecedarian {
     public static void main(String[] args) {
         String word1 = "abdest";
         String word2 = "acorsy";
