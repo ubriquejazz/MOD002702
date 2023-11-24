@@ -1,61 +1,94 @@
 
 $CATEGORY: Q10 - Conditionals and logic
 
-::Q1001:: boolean - A data type with only two possible values, true and false. {TRUE}
+::Q10_01:: boolean - A data type with only two possible values, true and false. {TRUE}
 
-::Q1002:: relational operator - compares two values and produces a boolean indicating the relationship between them.{TRUE}
+::Q10_02:: relational operator - compares two values and produces a boolean indicating the relationship between them.{TRUE}
 
-::Q1003:: conditional statement - A statement that uses a condition to determine which statements to execute.{TRUE}
+::Q10_03:: conditional statement - A statement that uses a condition to determine which statements to execute.{TRUE}
 
-::Q1004:: block - sequence of statements, surrounded by braces, that generally runs as the result of a condition.{TRUE}
+::Q10_04:: block - sequence of statements, surrounded by curly braquets, that generally runs as the result of a condition.{TRUE}
 
-::Q1005:: branch - one of the alternative blocks after a conditional statement.{TRUE}
+::Q10_05:: branch - one of the alternative blocks after a conditional statement.{TRUE}
 
-::Q1006:: chaining - {
+::Q10_06:: chaining - {
     =A way of joining several conditional statements in sequence.
     ~Putting a conditional statement inside one or both branches of another conditional statement.
 }
 
-::Q1007:: nesting - {
-    ~A way of joining several conditional statements in sequence.
-    =Putting a conditional statement inside one or both branches of another conditional statement.
+::Q10_07a:: given the statement on the whiteboard (for) identify its type {
+    =nesting
+    ~chaining
 }
 
-::Q1008:: logical operator - combines boolean values and produces a boolean value.{TRUE}
+::Q10_07b:: given the statement on the whiteboard (if) identify its type {
+    ~nesting
+    =chaining
+}
 
-::Q1009:: flag - variable (usually boolean) that represents a condition or status.{TRUE}
+::Q10_08:: logical operator - combines boolean values and produces a boolean value. 
+The \=\= operator is one of them {FALSE#Nop! it's a relational operator}
 
-::Q1001:: validate - to confirm that an input value is of the correct type and within the expected range.{TRUE}
+::Q10_09:: flag - variable (usually boolean) that represents a condition or status.{TRUE}
+
+::Q10_10:: validate - to confirm that an input value is of the correct type and within the expected range.{TRUE}
 
 $CATEGORY: Q11 - Loops and strings
 
-::Q1101::
+::Q11_01::
 loop - A statement that executes a sequence of statements repeatedly.{TRUE}
 
-::Q1102::
-loop body - The statements inside the loop.{TRUE}
+::Q11_02::
+loop body - The statements inside the loop normally limited by square braquets {FALSE#Curly braquets}
 
-::Q1103::
+::Q11_03::
 infinite loop - A loop whose condition is always true.{TRUE}
 
-::Q1104::
-iteration - Executing a sequence of statements repeatedly.{TRUE}
-
-::Q1105::
-loop variable - {
-    =A variable that is initialized, tested, and updated in order to control a loop.
-    ~An integer variable or value used to indicate a character in a string.
-}
-
-::Q1106::
+::Q11_04::
 index - {
     ~A variable that is initialized, tested, and updated in order to control a loop.
     =An integer variable or value used to indicate a character in a string.
 }
 
-::Q1107::
+::Q11_05::
+loop variable - {
+    =A variable that is initialized, tested, and updated in order to control a loop.
+    ~An integer variable or value used to indicate a character in a string.
+}
+
+::Q11_06::
+iteration - Execution of the loop body for a particular value of the loop variable.{TRUE}
+
+::Q11_07::
 Unicode - An international standard for representing characters in most of the languages.{TRUE}
 
-::Q1108::
+::Q11_08::
 empty string - The string which contains no characters and has a length of zero.{TRUE}
 
+$CATEGORY: Q12 - String functions
+
+Given the string s initialized to the value "banana", explain the functionality of
+
+::Q12_01::
+s.length() {}
+
+::Q12_02::
+s.charAt(0) {}
+
+::Q12_03a::
+s.indexOf('a') {}
+
+::Q12_03b::
+s.indexOf('a', 1) {}
+
+::Q12_04a::
+s.substring(0, 3) {}
+
+::Q12_04b::
+s.substring(2) {}
+
+::Q12_05::
+s.compareTo("banner"){}
+
+::Q12_06::
+s.equals("orange") {}
