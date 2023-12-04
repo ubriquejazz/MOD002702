@@ -1,48 +1,49 @@
-$CATEGORY: Q13 - Random numbers
+$CATEGORY: Q13 - Arrays and strings
 
 ::Q1301::
-nondeterministic {
-    =A program that does the same thing every time it is run.
-    =A program that behaves differently even when run multiple times with the same input
-}
+array - a collection of values in which all the values might have different types. {FALSE}
 
 ::Q1302::
-pseudorandom - A sequence of numbers that appear to be random but are actually the product of a deterministic computation. {TRUE}
-
-$CATEGORY: Q12 - Arrays and strings
-
-::Q1201::
-array - a collection of values in which all the values have the same type. {TRUE}
-
-::Q1202::
 element - One of the values in an array. The [] operator selects elements. {TRUE}
 
-::Q1203::
+::Q1303::
 index - an integer variable or value used to indicate an element of an array. {TRUE}
 
-::Q1204::
+::Q1304::
 allocate - to reserve memory for an array or other object. In Java, the new operator allocates memory. {TRUE}
 
-::Q1205::
+::Q1305::
 reference - a value that indicates a storage location. In a memory diagram, a reference appears as an arrow. {TRUE}
 
-::Q1206::
+::Q1306::
 alias - a variable that refers to the same object as another variable. {TRUE}
 
-::Q1207::
+::Q1307::
 traversal - looping through the elements of an array (or other collection). {TRUE}
 
-::Q1208::
-search - a traversal pattern used to find a particular element of an array. {TRUE}
+::Q1308::
+reduce {
+    ~ a traversal pattern used to find a particular element of an array
+    = a traversal pattern that combines the elements of an array into a single value
+}
 
-::Q1209::
-reduce - a traversal pattern that combines the elements of an array into a single value.{TRUE}
+::Q1309::
+search {
+    = a traversal pattern used to find a particular element of an array
+    ~ a traversal pattern that combines the elements of an array into a single value
+}
 
-::Q1210::
+::Q1310::
 accumulator - a variable used to accumulate results during a traversal. {TRUE}
 
-::Q1211::
-histogram - an array of integers in which each integer counts the number of values that fall into a certain range.{TRUE}
+::Q1311::
+histogram {
+    =an array of integers in which each integer counts the number of values that fall into a certain range.
+    ~an alternative syntax for traversing the elements of an array (or other collection)
+} 
 
-::Q1212::
-enhanced for loop - an alternative syntax for traversing the elements of an array (or other collection). {TRUE}
+::Q1313::
+enhanced for loop {
+    ~an array of integers in which each integer counts the number of values that fall into a certain range.
+    =an alternative syntax for traversing the elements of an array (or other collection)
+} 
