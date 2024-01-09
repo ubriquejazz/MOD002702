@@ -1,38 +1,3 @@
-
-$CATEGORY: Q10 - Conditionals and logic
-
-::Q10_01:: boolean - A data type with only two possible values, true and false. {TRUE}
-
-::Q10_02:: relational operator - compares two values and produces a boolean indicating the relationship between them.{TRUE}
-
-::Q10_03:: conditional statement - A statement that uses a condition to determine which statements to execute.{TRUE}
-
-::Q10_04:: block - sequence of statements, surrounded by curly braquets, that generally runs as the result of a condition.{TRUE}
-
-::Q10_05:: branch - one of the alternative blocks after a conditional statement.{TRUE}
-
-::Q10_06:: chaining - {
-    =A way of joining several conditional statements in sequence.
-    ~Putting a conditional statement inside one or both branches of another conditional statement.
-}
-
-::Q10_07a:: given the statement on the whiteboard (for) identify its type {
-    =nesting
-    ~chaining
-}
-
-::Q10_07b:: given the statement on the whiteboard (if) identify its type {
-    ~nesting
-    =chaining
-}
-
-::Q10_08:: logical operator - combines boolean values and produces a boolean value. 
-The \=\= operator is one of them {FALSE#Nop! it's a relational operator}
-
-::Q10_09:: flag - variable (usually boolean) that represents a condition or status.{TRUE}
-
-::Q10_10:: validate - to confirm that an input value is of the correct type and within the expected range.{TRUE}
-
 $CATEGORY: Q11 - Loops and strings
 
 ::Q11_01::
