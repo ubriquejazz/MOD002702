@@ -18,20 +18,16 @@ Ejercicios de array.
 **R05**
 Recursive Methods
 Immutable Objects
-**R07**
-Array of Objects
-Objects of Arrays
 **R06**
 Mutable Objects
+Graphics (AWT)
 Designing Classes
+**R07**
+Array of Objects (12)
+Objects of Arrays (13)
 **R08**
-Extended Classes
-Arrays of Arrays
-
-## Term
+Extended Classes - 14
+Arrays of Arrays - 15
 **R09**
-Reusing Classes
-Advanced Topics
-**R10**
-JSP y SQLite
-
+Reusing Classes (16)
+Advanced Topics (17)
