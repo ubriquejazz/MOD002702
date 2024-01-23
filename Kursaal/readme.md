@@ -23,8 +23,8 @@ Mutable Objects
 Graphics (AWT)
 Designing Classes
 **R07**
-Array of Objects (12)
-Objects of Arrays (13)
+Array of Objects
+ArrayLists (13)
 **R08**
 Extended Classes - 14
 Arrays of Arrays - 15
