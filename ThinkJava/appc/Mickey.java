@@ -33,10 +33,16 @@ public class Mickey extends Canvas {
         int hy = bb.height / 2;
         Rectangle half = new Rectangle(bb.x, bb.y, hx, hy);
 
-        half.translate(-hx / 2, -hy / 2);
+        half.translate(-hx/2, -hy/2);       // -50, -50
+        boxOval(g, half);
+/* 
+        half.translate(0, hy*2);        // 0, 200
+        boxOval(g, half);
+*/
+        half.translate(hx*2, 0);        // 200, 0
         boxOval(g, half);
 
-        half.translate(hx * 2, 0);
+        half.translate(0, -2*hy);       // 0, -200
         boxOval(g, half);
     }
 

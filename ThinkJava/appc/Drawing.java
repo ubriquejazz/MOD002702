@@ -1,5 +1,6 @@
 import java.awt.Canvas;
 import java.awt.Graphics;
+import java.awt.Color;
 import javax.swing.JFrame;
 
 public class Drawing extends Canvas {
@@ -10,6 +11,7 @@ public class Drawing extends Canvas {
         
         Canvas drawing = new Drawing();
         drawing.setSize(400, 400);
+        drawing.setBackground(Color.WHITE);
         
         frame.add(drawing);
         frame.pack();
@@ -17,6 +19,7 @@ public class Drawing extends Canvas {
     }
 
     public void paint(Graphics g) {
+        g.setColor(Color.RED);
         g.fillOval(100, 100, 200, 200);
     }
 
