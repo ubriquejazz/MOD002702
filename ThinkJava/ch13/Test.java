@@ -19,25 +19,28 @@ public class Test {
      * Demonstrates how to call the sorting methods.
      */
     public static void main(String[] args) {
-        Deck deck;
+        Deck deck = new Deck();
 
         System.out.println("Testing selection...");
-        deck = new Deck();
         deck.shuffle();
         deck.selectionSort();
         checkSorted(deck);
 
+    
         System.out.println("Testing mergesort...");
         deck = new Deck();
         deck.shuffle();
+        deck.print();
         deck = deck.mergeSort();
         checkSorted(deck);
 
+        /* 
         System.out.println("Testing insertion...");
         deck = new Deck();
         deck.shuffle();
         deck.insertionSort();
         checkSorted(deck);
+        */
     }
 
 }

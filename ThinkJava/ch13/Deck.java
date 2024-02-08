@@ -59,25 +59,43 @@ public class Deck {
      * Randomly permutes the array of cards.
      */
     public void shuffle() {
+        int len = this.cards.length;
+        for (int i = 1; i<len; i++) {
+            // choose a random number between i and length - 1
+            int j = randomInt(i, len-1);
+            // swap the ith card and the randomly-chosen card
+            swapCards(i, j);
+        }
     }
 
     /**
      * Chooses a random number between low and high, including both.
      */
     private static int randomInt(int low, int high) {
-        return 0;
+        Random rand = new Random();
+        return rand.nextInt(high - low + 1) + low;
     }
 
     /**
-     * Swaps the cards at indexes i and j.
+     * Swaps the cards at indexes i and j in a sorted deck of 52 cards.
      */
     private void swapCards(int i, int j) {
+        Card tmp = this.cards[i];
+        this.cards[i] = this.cards[j];
+        this.cards[j] = tmp;
     }
 
     /**
-     * Sorts the cards (in place) using selection sort.
+     * Sorts the cards (in place) using selection sort. No efficient!
      */
     public void selectionSort() {
+        int len = this.cards.length;
+        for (int i = 1; i<len; i++) {
+            // find the lowest card at or to the right of i
+            int j = indexLowest(i, len-1);
+            // swap the ith card and the lowest card found
+            swapCards(i, j);
+        }
     }
 
     /**
@@ -85,7 +103,21 @@ public class Deck {
      * between low and high inclusive.
      */
     private int indexLowest(int low, int high) {
-        return 0;
+        int lowestIndex = -1;
+        int lowestValue = Integer.MAX_VALUE; // Set to maximum possible integer value
+
+        for (int i = low; i <= high; i++) {
+            // Get the rank value of the card
+            // rankValue = getRankValue(deck[i].rank);
+            int rankValue = this.cards[i].position();
+            
+            // Update lowestIndex if the current card's value is lower
+            if (rankValue < lowestValue) {
+                lowestIndex = i;
+                lowestValue = rankValue;
+            }
+        }
+        return lowestIndex;
     }
 
     /**
@@ -103,23 +135,59 @@ public class Deck {
      * Combines two previously sorted subdecks.
      */
     private static Deck merge(Deck d1, Deck d2) {
-        return null;
+        // create a new deck, d3, big enough for all the cards
+        Deck d3 = new Deck(d1.cards.length + d2.cards.length);
+        int i = 0;  // to keep track of where we are at in d1
+        int j = 0;  // to keep track of where we are at in d2
+
+        // the index k traverses the result deck
+        for (int k = 0; k < d3.cards.length; k++) {
+            // if d1 is empty, use top card from d2
+            // if d2 is empty, use top card from d1
+            
+
+            // otherwise, compare the top two cards
+            if (d1.cards[i].compareTo(d2.cards[j]) > 0) {
+                d3.cards[k] = d1.cards[i];
+                k++;
+                i++;
+            }
+            else {
+                d3.cards[k] = d2.cards[j];
+                k++;
+                j++;
+            }
+        }
+        // return the new deck
+        return d3;
     }
 
     /**
      * Returns a sorted copy of the deck using selection sort.
      */
     public Deck almostMergeSort() {
+        // divide the deck into two subdecks
+        // sort the subdecks using selectionSort
+        // merge the subdecks, return the result
         return this;
     }
 
     /**
-     * Returns a sorted copy of the deck using merge sort.
+     * Returns a sorted copy of the deck using merge sort. Efficient!
      */
     public Deck mergeSort() {
+        // if the deck has 0 or 1 cards, return it
+        // otherwise, divide the deck into two subdecks
+        // sort the subdecks using mergeSort
+        // merge the subdecks
+        // return the result
         return this;
     }
 
+
+
+
+    
     /**
      * Reorders the cards (in place) using insertion sort.
      */
