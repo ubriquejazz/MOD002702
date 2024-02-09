@@ -31,10 +31,21 @@ public class Pile {
     }
 
     /**
+     * Modifier!
+     */
+    public void merge(Pile that) {
+        this.cards.addAll(that.cards);
+    }
+
+    /**
      * Returns true if this pile has no cards.
      */
     public boolean isEmpty() {
         return this.cards.isEmpty();
+    }
+
+    public int size() {
+        return this.cards.size();
     }
 
     /**
