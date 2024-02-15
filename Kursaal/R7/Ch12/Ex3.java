@@ -47,30 +47,40 @@ public class Ex3 {
 
     // method that determines whether an array of cards contains a royal flush.
     public static boolean hasRoyal(Card[] cards) {
-        int[] rank = {10, 11, 12, 13, 1};
-        int suit = cards[0].getSuit();
+        int[] mult = {2, 3, 5, 7}; // ten, jack, queen, king
+        int[] hist = {1, 1, 1, 1};
+        
         for (int i=0; i<cards.length; i++) {
-            if (suit != cards[i].getSuit())
-                return false;
-            if (!contains(rank, cards[i].getRank()))
-                return false;
+            Card card = cards[i];
+            if (card.getRank() == 1) 
+                hist[card.getSuit()] *= 11; // ace
+              
+            for (int j=10; j<=13; j++) {
+                if (card.getRank() == j) 
+                    hist[card.getSuit()] *= mult[j-10];   
+            } 
         }
-        return true;
+        for (int h : hist) {
+            if ((h%11==0) && (h%mult[0]==0) && (h%mult[1]==0) && (h%mult[2]==0) && (h%mult[3]==0))
+                return true;
+        }
+        return false;
     }
 
     public static void main(String[] args) {
         int[] histogram;
         
-        Card[] myHand = new Card[5];
+        Card[] myHand = new Card[6];
         myHand[0] = new Card(1,0);
         myHand[1] = new Card(10,0);
         myHand[2] = new Card(11,0);
         myHand[3] = new Card(12,0);
         myHand[4] = new Card(13,0);
+        myHand[5] = new Card(7,1);
 
         if (hasRoyal(myHand))
             System.out.println("Tienes escalera de color");
-        else if (hasFlush(myHand))
+        if (hasFlush(myHand))
             System.out.println("Tienes escalera normal");
 
         Card[] deck = makeDeck();

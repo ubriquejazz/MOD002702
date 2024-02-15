@@ -2,6 +2,9 @@
 *.d
 *.DS_Store
 
+# source paths
+.vscode
+
 # Object files
 *.o
 *.ko
@@ -71,7 +74,3 @@ dkms.conf
 *.zip
 *.tar.gz
 *.rar
-/202304/Saludo1/target/
-/202304/Hello1/target/
-/202304/Saludo3/target/
-/202304/Saludo4/target/

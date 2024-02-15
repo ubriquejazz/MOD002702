@@ -1,11 +1,28 @@
-Array of Objects 
+$CATEGORY: Q18 - Array of Objects 
 
-encode:
-    To represent one set of values using another set of values by constructing a mapping between them.
-class variable:
-    A variable declared within a class as static. There is only one copy of a class variable, no matter how many objects there are.
-sequential search:
-    An algorithm that searches array elements, one by one, until a target value is found.
-binary search:
-    An algorithm that searches a sorted array by starting in the middle, comparing an element to the target, and eliminating half of the remaining elements.
+::Q1801::
+encode - To represent one set of values using another set of values by constructing a mapping between them. {TRUE}
 
+::Q1802:: 
+A variable declared within a class as static. There is only one copy, no matter how many objects there are. {
+    = class variable
+    ~ instance variable
+}
+
+::Q1803::
+An attribute of an object; a non-static variable defined at the class level. {
+    = instance variable
+    ~ class variable
+}
+
+::Q1804::
+An algorithm that searches array elements, one by one, until a target value is found. {
+    = sequential search
+    ~ binary search
+}
+
+::Q1805::
+An algorithm that searches a sorted array by starting in the middle, comparing an element to the target, and eliminating half of the remaining elements. {
+    = binary search
+    ~ sequential search
+}

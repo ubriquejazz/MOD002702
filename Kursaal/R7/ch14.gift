@@ -1,14 +1,43 @@
-Extended Classes
+$CATEGORY: Q20 - Extended Classes
 
-inheritance:
-    The ability to define a new class that has the same instance variables and methods of an existing class.
-subclass:
-    A class that inherits from, or extends, an existing class.
-superclass:
-    An existing class that is extended by another class.
-bottom-up design:
-    A way of developing programs by identifying simple pieces, implementing them first, and then assembling them into more-complex algorithms.
-HAS-A:
-    A relationship between two classes in which one class “has” an instance of another class as one of its attributes.
-IS-A:
-    A relationship between two classes in which one class extends another class; the 
+::Q2001::
+The ability to define a new class that has the same instance variables and methods of an existing class. {
+    = inheritance
+    ~ polymorfism
+}
+
+::Q2002::
+A class that inherits from, or extends, an existing class. {
+    = subclass
+    ~ superclass
+}
+
+::Q2003::
+An existing class that is extended by another class. {
+    = superclass
+    ~ top-down design
+}
+
+::Q2004::
+A way of developing programs by identifying simple pieces, implementing them first, and then assembling them into more-complex algorithms. {
+    = bottom-up design
+    ~ top-down design
+}
+
+::Q2005::
+Breaking down a problem into subproblems, and solving each subproblem one at a time {
+    = top-down design
+    ~ bottom-up design
+}
+
+::Q2006::
+A relationship between two classes in which one class “has” an instance of another class as one of its attributes. {
+    = HAS-A
+    ~ IS-A
+}
+
+::Q2007::
+A relationship between two classes in which one class extends another class; the subclass “is” an instance of the superclass. {
+    = IS-A
+    ~ HAS-A
+}
