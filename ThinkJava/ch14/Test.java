@@ -13,8 +13,7 @@ public class Test {
 
         Hand drawPile = new Hand("Draw Pile");
         deck.dealAll(drawPile);
-        System.out.printf("Draw Pile has %d cards.\n",
-                          drawPile.size());
+        System.out.printf("Draw Pile has %d cards.\n", drawPile.size());
     }
 
 }
