@@ -52,7 +52,12 @@ public class Deck {
      * Returns a string representation of the deck.
      */
     public String toString() {
-        return Arrays.toString(this.cards[0]));
+        StringBuilder text = new StringBuilder();
+        for (Card card : this.cards) {
+            text.append(card);
+            text.append('\n');
+        }
+        return text.toString();
     }
 
     /**
@@ -132,56 +137,54 @@ public class Deck {
     }
 
     /**
-     * Combines two previously sorted subdecks.
+     * Returns the histogram by suit
      */
-    private static Deck merge(Deck d1, Deck d2) {
-        // create a new deck, d3, big enough for all the cards
-        Deck d3 = new Deck(d1.cards.length + d2.cards.length);
-        int i = 0;  // to keep track of where we are at in d1
-        int j = 0;  // to keep track of where we are at in d2
+    public static int[] suitHist(Deck hand) {
+        int[] hist= new int[4];
+        int len = hand.cards.length;
+        for (int i=0; i<len; i++) {
+            int index = hand.cards[i].getSuit();
+            hist[index]++;
+        }
+        return hist;
+    }
 
-        // the index k traverses the result deck
-        for (int k = 0; k < d3.cards.length; k++) {
-            // if d1 is empty, use top card from d2
-            // if d2 is empty, use top card from d1
-            
-
-            // otherwise, compare the top two cards
-            if (d1.cards[i].compareTo(d2.cards[j]) > 0) {
-                d3.cards[k] = d1.cards[i];
-                k++;
-                i++;
-            }
-            else {
-                d3.cards[k] = d2.cards[j];
-                k++;
-                j++;
+    private static int[] royalHist(Deck hand) {
+        int[] hist= new int[4];
+        int len = hand.cards.length;
+        for (int i=0; i<len; i++) {
+            if (hand.cards[i].getRank() >= 10) {
+                int index = hand.cards[i].getSuit();
+                hist[index] ++;
             }
         }
-        // return the new deck
-        return d3;
+        return hist;
     }
 
     /**
-     * Returns a sorted copy of the deck using selection sort.
+     * hand that contains five or more cards of the same suit
+     * @param hand
+     * @return
      */
-    public Deck almostMergeSort() {
-        // divide the deck into two subdecks
-        // sort the subdecks using selectionSort
-        // merge the subdecks, return the result
-        return this;
-    }
+    public static boolean hasFlush(Deck hand) {
+        int[] hist = suitHist(hand);
+        for (int h : hist) {
+            if (h >= 5) return true;
+        }
+        return true;
+    }    
 
     /**
-     * Returns a sorted copy of the deck using merge sort. Efficient!
+     * royal flush
+     * determines whether an array of cards contains a royal flush.
      */
-    public Deck mergeSort() {
-        // if the deck has 0 or 1 cards, return it
-        // otherwise, divide the deck into two subdecks
-        // sort the subdecks using mergeSort
-        // merge the subdecks
-        // return the result
-        return this;
+    public static boolean hasRoyal(Deck hand) {
+        int[] hist = royalHist(hand);
+        for (int h : hist) {
+            if (h >= 5) return true;
+        }
+        return false;
     }
 
+    
 }

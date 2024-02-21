@@ -35,16 +35,6 @@ public class Ex3 {
         return true;
     }
 
-    // method iterates through the array and checks if each element is equal to the target value. 
-    public static boolean contains(int[] arr, int target) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == target) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     // method that determines whether an array of cards contains a royal flush.
     public static boolean hasRoyal(Card[] cards) {
         int[] mult = {2, 3, 5, 7}; // ten, jack, queen, king

@@ -7,7 +7,11 @@ public class Ex1 {
 
     public static void main(String[] args) {
         Deck d1 = new Deck();
-        System.out.println(d1);
+        d1.shuffle();
+        Deck d2 = d1.subdeck(10, 20);
+
+        System.out.println(d2);
+        
     }
     
 }
