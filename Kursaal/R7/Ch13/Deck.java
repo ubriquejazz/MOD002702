@@ -163,8 +163,6 @@ public class Deck {
 
     /**
      * hand that contains five or more cards of the same suit
-     * @param hand
-     * @return
      */
     public static boolean hasFlush(Deck hand) {
         int[] hist = suitHist(hand);

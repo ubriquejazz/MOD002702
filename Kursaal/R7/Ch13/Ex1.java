@@ -9,9 +9,7 @@ public class Ex1 {
         Deck d1 = new Deck();
         d1.shuffle();
         Deck d2 = d1.subdeck(10, 20);
-
         System.out.println(d2);
-        
     }
     
 }
