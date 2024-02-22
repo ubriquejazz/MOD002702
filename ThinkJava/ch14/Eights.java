@@ -91,7 +91,12 @@ public class Eights {
         discardPile.display();
         System.out.print("Draw pile: ");
         System.out.println(drawPile.size() + " cards");
-        in.nextLine();
+        //in.nextLine();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
     /**
