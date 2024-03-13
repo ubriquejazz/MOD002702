@@ -1,11 +1,8 @@
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
 
 public class Baraja {
-    private List<Carta> cartas;
+    private ArrayList<Carta> cartas;
     private int cartaActual;
 
     public Baraja() {
@@ -20,7 +17,6 @@ public class Baraja {
                 cartas.add(carta);
             }
         }
-
         cartaActual = 0;
     }
 
@@ -33,7 +29,6 @@ public class Baraja {
         if (cartaActual >= cartas.size()) {
             return null;
         }
-
         Carta carta = cartas.get(cartaActual);
         cartaActual++;
         return carta;
