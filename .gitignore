@@ -4,7 +4,7 @@
 
 # source paths
 .vscode
-.vscode/settings.jsan
+.vscode/settings.json
 
 # Object files
 *.o
