@@ -7,20 +7,19 @@ public class Dinero {
     static ArrayList<Moneda> lista = new ArrayList<Moneda>();
 
     // Atributos de Objeto
-    private double cantidad;
-    private TipoMoneda tMoneda;
+    private double cantidad; // euros
 
     public Dinero(double cant, TipoMoneda tMoneda) {
-        if (this.cont == 0) {
+        if (cont == 0) {
             lista.add(new Moneda(TipoMoneda.euro, 2, "€", "EUR", 1));
-            lista.add(new Moneda(TipoMoneda.pound, 2, "£", "GBP", 1.14));
+            lista.add(new Moneda(TipoMoneda.pound, 3, "£", "GBP", 1.14));
             lista.add(new Moneda(TipoMoneda.dollar, 2, "$", "USD", 0.98));
         }
-        this.cantidad = cant;
-        this.tMoneda = tMoneda;
+        this.cantidad = this.valorEn(cant, tMoneda);
+        cont++;
     }
-
-    public void actualizaListaInternet() {
+    
+    public static void actualizaListaInternet() {
         for (TipoMoneda currency: TipoMoneda.values() ) {
             System.out.println("\t" + currency + " updated!");
         }
@@ -40,43 +39,35 @@ public class Dinero {
         return cantidad;
     }
 
-    public TipoMoneda gettMoneda() {
-        return tMoneda;
-    }
-
     public void setCantidad(double cantidad) {
         this.cantidad = cantidad;
     }
 
-    public void settMoneda(TipoMoneda t) {
-        this.tMoneda = t;
-    }
-
-    @Override
-    public String toString() {
-        int decimales = buscaMoneda(this.tMoneda).getDecimales();
-        double divisor = Math.pow(10, decimales); // 100
-        double redondeo =  Math.round(this.cantidad * divisor);
-        return redondeo/divisor + " " + buscaMoneda(this.tMoneda).getCodigo();
-    }
-
-    public double valorEn(TipoMoneda t) {
+    public double valorEn(double cant, TipoMoneda t) {
         Moneda nuevaDivisa = buscaMoneda(t);
-        double newCantidad = this.cantidad * nuevaDivisa.getCambioEuro();
+        double newCantidad = cant * nuevaDivisa.getCambioEuro();
         int decimales = nuevaDivisa.getDecimales();
         double divisor = Math.pow(10, decimales);
         double redondeo =  Math.round(newCantidad * divisor);
         return redondeo/divisor;
     }
 
-    public Dinero convertirEn(TipoMoneda t) {
-        Moneda nuevaDivisa = buscaMoneda(t);
-        double newCantidad = this.cantidad * nuevaDivisa.getCambioEuro();
-        return new Dinero(newCantidad, t);
+    @Override
+    public String toString() {
+        Moneda defaultDivisa = buscaMoneda(TipoMoneda.euro);
+        int decimales = defaultDivisa.getDecimales();
+        double divisor = Math.pow(10, decimales); // 100
+        double redondeo =  Math.round(this.cantidad * divisor);
+        return redondeo/divisor + " " + defaultDivisa.getCodigo();
     }
 
     public String toString(TipoMoneda t) {
-        return convertirEn(t).toString();
+        Moneda nuevaDivisa = buscaMoneda(t);
+        double newCantidad = this.cantidad / nuevaDivisa.getCambioEuro();
+        int decimales = nuevaDivisa.getDecimales();
+        double divisor = Math.pow(10, decimales); // 100
+        double redondeo =  Math.round(newCantidad * divisor);
+        return redondeo/divisor + " " + nuevaDivisa.getCodigo();
     }
 
 }

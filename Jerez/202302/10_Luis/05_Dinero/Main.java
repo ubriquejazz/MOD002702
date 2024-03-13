@@ -1,16 +1,25 @@
 public class Main {
     public static void main(String []args) {
 
+       Dinero suelto = new Dinero(2.1899999, TipoMoneda.euro);
+       System.out.println("Euritos: " + suelto);
+       System.out.println("Dollars: " + suelto.toString(TipoMoneda.dollar));
+       System.out.println("Euritos: " + suelto);
+       System.out.println(Dinero.cont);
 
-       Dinero pocket = new Dinero(2.1899999, TipoMoneda.euro);
-       System.out.println("Euritos: " + pocket);
-       System.out.println("Dollars: " + pocket.toString(TipoMoneda.dollar));
-       //System.out.println(pocket + " = " + pocket.valorEn(TipoMoneda.pound) + TipoMoneda.pound);
-       Dinero libritas = pocket.convertirEn(TipoMoneda.pound);
-       System.out.println("Libritas: " + libritas);
+       Dinero wallet = new Dinero(9.995, TipoMoneda.dollar);
+       System.out.println("Euritos: " + wallet);
+       System.out.println("Dollars: " + wallet.toString(TipoMoneda.dollar));
+       System.out.println(Dinero.cont);
+
+
+       Dinero pounds = new Dinero(21.495, TipoMoneda.pound);
+       System.out.println("Euritos: " + pounds);
+       System.out.println("Dollars: " + pounds.toString(TipoMoneda.pound));
+       System.out.println(Dinero.cont);
 
        System.out.println("\nUpdating change rate...");
-       pocket.actualizaListaInternet();
-
+       Dinero.actualizaListaInternet();
+       
     }
 }

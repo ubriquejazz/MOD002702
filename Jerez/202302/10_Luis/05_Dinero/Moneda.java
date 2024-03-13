@@ -62,5 +62,7 @@ public class Moneda {
     }
 
     @Override
-    public String toString() { return "1"+simbolo+" = "+cambioEuro+"€";}
+    public String toString() { 
+        return "1"+simbolo+" = "+cambioEuro+"€";
+    }
 }
