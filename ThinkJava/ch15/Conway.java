@@ -8,19 +8,20 @@ import javax.swing.JFrame;
  */
 public class Conway {
 
+    private int timestamp;
     private GridCanvas grid;
 
     /**
      * Creates a grid with two Blinkers.
      */
     public Conway() {
-        grid = new GridCanvas(5, 10, 20);
-        grid.turnOn(2, 1);
-        grid.turnOn(2, 2);
-        grid.turnOn(2, 3);
-        grid.turnOn(1, 7);
-        grid.turnOn(2, 7);
-        grid.turnOn(3, 7);
+        timestamp = 0;
+        grid = new GridCanvas(40, 40, 10);
+        grid.turnOn(0, 12);
+        grid.turnOn(1, 13);
+        grid.turnOn(2, 11);
+        grid.turnOn(2, 12);
+        grid.turnOn(2, 13);
     }
 
     /**
@@ -103,29 +104,21 @@ public class Conway {
     }
 
     /**
-     * Simulates one round of Conway's Game of Life.
-     */
-    public void update() {
-        int[][] counts = countNeighbors();
-        updateGrid(counts);
-    }
-
-    /**
      * The simulation loop.
      */
     private void mainloop() {
         while (true) {
-
-            // update the drawing
-            this.update();
-            grid.repaint();
-
-            // delay the simulation
+            int[][] counts = countNeighbors(); // intermediate array
+            updateGrid(counts); // grid is updated 
+            grid.repaint();     // from Canvas
             try {
-                Thread.sleep(500);
+                Thread.sleep(100);
+                ++timestamp;
             } catch (InterruptedException e) {
                 // do nothing
             }
+            if (timestamp%10 == 0)
+                System.out.println("T=" + timestamp + " Population: " + grid.countOn());
         }
     }
 
