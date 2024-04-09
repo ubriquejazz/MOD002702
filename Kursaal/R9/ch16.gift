@@ -1,8 +1,28 @@
-Reusing Classes 
+$CATEGORY: Q21 - Reusing Classes 
 
-refactor:
-    To restructure or reorganize existing source code without changing its behavior.
-abstract class:
-    A class that is declared as abstract; it cannot be instantiated, and it may (or may not) include abstract methods.
-concrete class:
-    A class that is not declared as abstract; each of its methods must have an implementation.
+::Q2101::
+refactor - to reorganize existing source code without changing its behavior. {TRUE}
+
+::Q2102::
+A class that cannot be instantiated, and it may include abstract methods.{
+    = abstract class
+    ~ concrete class
+}
+
+::Q2103::
+A class that each of its methods must have an implementation. {
+    ~ abstract class
+    = concrete class
+}
+
+::Q2104::
+Storing data in a 2D array, first by rows and then by columns. {
+    ~ column-major order
+    = row-major order
+}
+
+::Q2105::
+Storing data in a 2D array, first by columns and then by rows. {
+    ~ row-major order
+    = column-major order
+}
