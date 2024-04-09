@@ -3,104 +3,57 @@
  */
 public class Langton extends Automaton {
 
+    private int xpos;
+    private int ypos;
+    private int head; // 0=North, 1=East, 2=South, 3=West
+    
     /**
      * Creates a grid with two Blinkers.
      */
     public Langton() {
-        grid = new GridCanvas(5, 10, 20);
-        grid.turnOn(2, 1);
-        grid.turnOn(2, 2);
-        grid.turnOn(2, 3);
-        grid.turnOn(1, 7);
-        grid.turnOn(2, 7);
-        grid.turnOn(3, 7);
+        grid = new GridCanvas(61, 61, 10);
+        xpos = 61 / 2;
+        ypos = 61 / 2;
+        head = 0;
     }
 
-    /**
-     * Counts the number of live neighbors around a cell.
-     * 
-     * @param r row index
-     * @param c column index
-     * @return number of live neighbors
+        /**
+     * Flip the color of the current cell.
      */
-    private int countAlive(int r, int c) {
-        int count = 0;
-        count += grid.test(r - 1, c - 1);
-        count += grid.test(r - 1, c);
-        count += grid.test(r - 1, c + 1);
-        count += grid.test(r, c - 1);
-        count += grid.test(r, c + 1);
-        count += grid.test(r + 1, c - 1);
-        count += grid.test(r + 1, c);
-        count += grid.test(r + 1, c + 1);
-        return count;
-    }
-
-    /**
-     * Apply the update rules of Langton's Game of Life.
-     * 
-     * @param cell the cell to update
-     * @param count number of live neighbors
-     */
-    private static void updateCell(Cell cell, int count) {
-        if (cell.isOn()) {
-            if (count < 2 || count > 3) {
-                // Any live cell with fewer than two live neighbors dies,
-                // as if by underpopulation.
-                // Any live cell with more than three live neighbors dies,
-                // as if by overpopulation.
-                cell.turnOff();
-            }
+    private void flipCell() {
+        Cell cell = grid.getCell(xpos, ypos);
+        if (cell.isOff()) {
+            // at a white square; turn right and flip color
+            head = (head + 1) % 4;
+            cell.turnOn();
         } else {
-            if (count == 3) {
-                // Any dead cell with exactly three live neighbors
-                // becomes a live cell, as if by reproduction.
-                cell.turnOn();
-            }
+            // at a black square; turn left and flip color
+            head = (head + 3) % 4;
+            cell.turnOff();
         }
     }
 
     /**
-     * Counts the neighbors before changing anything.
-     * 
-     * @return number of neighbors for each cell
+     * Move the ant forward one unit.
      */
-    private int[][] countNeighbors() {
-        int rows = grid.numRows();
-        int cols = grid.numCols();
-
-        int[][] counts = new int[rows][cols];
-        for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < cols; c++) {
-                counts[r][c] = countAlive(r, c);
-            }
-        }
-        return counts;
-    }
-
-    /**
-     * Updates each cell based on neighbor counts.
-     * 
-     * @param counts number of neighbors for each cell
-     */
-    private void updateGrid(int[][] counts) {
-        int rows = grid.numRows();
-        int cols = grid.numCols();
-
-        for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < cols; c++) {
-                Cell cell = grid.getCell(r, c);
-                updateCell(cell, counts[r][c]);
-            }
+    private void moveAnt() {
+        if (head == 0) {
+            ypos -= 1;
+        } else if (head == 1) {
+            xpos += 1;
+        } else if (head == 2) {
+            ypos += 1;
+        } else {
+            xpos -= 1;
         }
     }
 
-    /**
-     * Simulates one round of Langton's Game of Life.
+   /**
+     * Simulates one round of Langton's Ant.
      */
     public void update() {
-        int[][] counts = countNeighbors();
-        updateGrid(counts);
+        flipCell();
+        moveAnt();
     }
 
     /**
@@ -109,9 +62,9 @@ public class Langton extends Automaton {
      * @param args command-line arguments
      */
     public static void main(String[] args) {
-        String title = "Langton's Game of Life";
+        String title = "Langton's Ant";
         Langton game = new Langton();
-        game.run(title, 2);
+        game.run(title, 500);
     }
 
 }
