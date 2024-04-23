@@ -3,9 +3,11 @@ public class Alumno {
     // atributos
     private String nombre;
     private int edad;
+    private int error;      // code
     private double calificacion;
 
     public Alumno(String nombre, int edad, double calificacion) {
+        this.error = 0;
         setNombre(nombre);
         setEdad(edad);
         setCalificacion(calificacion);
@@ -19,6 +21,9 @@ public class Alumno {
         if (!nombre.isEmpty()) {
             this.nombre = nombre;
         }
+        else {
+            this.error = -1;
+        }
     }
     
     public int getEdad() {
@@ -28,6 +33,9 @@ public class Alumno {
     public void setEdad(int edad) {
         if (edad >= 17 && edad <= 100) {
             this.edad = edad;
+        } 
+        else {
+            this.error = -2;
         }
     }
 
@@ -38,6 +46,9 @@ public class Alumno {
     public void setCalificacion(double calificacion) {
         if (calificacion >= 0 && calificacion <= 10) {
             this.calificacion = calificacion;
+        }
+        else {
+            this.error = -3;
         }
     }
 

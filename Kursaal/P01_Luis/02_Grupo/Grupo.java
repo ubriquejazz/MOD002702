@@ -19,7 +19,7 @@ public class Grupo {
     // Método para insertar un nuevo alumno a la lista pasando los datos por parámetro
     public void insertaAlumno(String nombre, int edad, double calificacion) {
         Alumno a = new Alumno(nombre, edad, calificacion);
-        insertaAlumno(a);
+        lista.add(a);
     }
 
     // Método para obtener una representación en String del grupo
@@ -62,7 +62,6 @@ public class Grupo {
             System.err.println("Error: Archivo no encontrado " + fichero);
         } catch (IOException e) {
             System.err.println("Error: Fallo de lectura del archivo " + fichero);
-
         } catch (NumberFormatException e) {
             System.err.println("Error: Archivo CSV mal formateado " + fichero);
         } catch (ArrayIndexOutOfBoundsException e) {
