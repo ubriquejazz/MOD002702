@@ -14,28 +14,25 @@ class Main {
           System.out.println(a);
     }
 
-    public static void test01() {
-        Grupo g = new Grupo();
+    public static void test_Write() {
+        Grupo g = new Grupo("Curso: 4D");
 
         g.insertaAlumno(new Alumno("Juan", 20, 7.5));
         g.insertaAlumno(new Alumno("Ana", 19, 8.0));
         g.insertaAlumno("Pedro", 21, 6.5);
-        System.out.println(g.toString());
-        System.out.println("------------");
-        g.escribeFicheroCSV("alumnos.csv");
-        g.leeFicheroCSV("alumnos.csv");
-        g.leeFicheroCSV("alumnos.csv");
-        g.leeFicheroCSV("alumnos.csv");
+        g.escribeFicheroCSV("alumnosGenerado.csv");
         System.out.println(g);
     }
 
-    public static void test02() {
+    public static void test_Read() {
         Grupo g = new Grupo();
-        g.leeFicheroCSV("data/alumnos.csv");
+        g.leeFicheroCSV("alumnosGenerado.csv");
         System.out.println(g);
     }
 
     public static void main(String[] args) {
-        test02();
+        test_Write();        
+        System.out.println("------------");
+        test_Read();
     }
 }

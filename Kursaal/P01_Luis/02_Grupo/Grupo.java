@@ -1,14 +1,20 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Grupo {
 
     private ArrayList<Alumno> lista;
+    private String nombre;
 
     // Constructor vacío
     public Grupo() {
         lista = new ArrayList<Alumno>();
+        this.nombre = "";
+    }
+
+    public Grupo(String nombre) {
+        lista = new ArrayList<Alumno>();
+        this.nombre = nombre;
     }
 
     // Método para insertar un nuevo alumno a la lista
@@ -24,7 +30,7 @@ public class Grupo {
 
     // Método para obtener una representación en String del grupo
     public String toString() {
-        String s = "";
+        String s = this.nombre + "\n";
         for (Alumno a : lista) {
             s += a.toString() + "\n";
         }
@@ -36,6 +42,7 @@ public class Grupo {
         try {
             FileWriter fWriter = new FileWriter(fichero);
             PrintWriter pw = new PrintWriter(fWriter);
+            pw.println(this.nombre);
             for (Alumno a : lista) {
                 pw.println(a.getNombre() + "," + a.getEdad() + "," + a.getCalificacion());
             }
@@ -52,6 +59,7 @@ public class Grupo {
         try {
             FileReader fReader = new FileReader(fichero);
             br = new BufferedReader(fReader);
+            this.nombre = br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(","); 
                 int edad = Integer.parseInt(data[1]);
