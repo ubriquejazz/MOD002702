@@ -1,59 +1,73 @@
 public class Alumno {
 
-    // atributos
+    // de clase
+    static final String[] ErrorMsgs = {
+        null, 
+        "Name cannot be null or empty",
+        "Age cannot be negative",
+        "Age between 17 and 100",
+        "Grade between 0 and 10"
+    };
+
+    // atributos de instancia
     private String nombre;
     private int edad;
-    private int error;      // code
-    private double calificacion;
+    private int error; 
+    private double grade;
 
-    public Alumno(String nombre, int edad, double calificacion) {
+    public Alumno(String nombre, int edad, double grade) {
         this.error = 0;
         setNombre(nombre);
         setEdad(edad);
-        setCalificacion(calificacion);
+        setCalificacion(grade);
+    }
+
+    public int getError() {
+        return this.error;
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
-        if (!nombre.isEmpty()) {
-            this.nombre = nombre;
+        if (nombre == null || nombre.trim().isEmpty()) {
+            this.error = 1;
+            throw new IllegalArgumentException("Name cannot be null or empty");
         }
-        else {
-            this.error = -1;
-        }
+        this.nombre = nombre;        
     }
     
     public int getEdad() {
-        return edad;
+        return this.edad;
     }
 
     public void setEdad(int edad) {
-        if (edad >= 17 && edad <= 100) {
-            this.edad = edad;
-        } 
-        else {
-            this.error = -2;
+        if (edad < 0) {
+            this.error = 2;
+            throw new IllegalArgumentException("Age cannot be negative");
         }
+        else if (edad < 17 && edad > 100) {
+            this.error = 3;
+            throw new IllegalArgumentException("Age between 17 and 100");
+        }
+        this.edad = edad;
     }
 
     public double getCalificacion() {
-        return calificacion;
+        return this.grade;
     }
 
-    public void setCalificacion(double calificacion) {
-        if (calificacion >= 0 && calificacion <= 10) {
-            this.calificacion = calificacion;
+    public void setCalificacion(double grade) {
+        if (grade < 0 || grade > 10) {
+            this.error = 4;
+            throw new IllegalArgumentException("Grade between 0 and 10");
         }
-        else {
-            this.error = -3;
-        }
+        this.grade = grade;
     }
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre + ", Edad: " + edad + ", Calificacion: " + calificacion;
+        return "Nombre: " + nombre + ", Edad: " + edad + ", Calificacion: " + grade;
     }
 }

@@ -5,6 +5,8 @@
 # source paths
 .vscode
 .vscode/settings.json
+Sandbox/
+data/
 
 # Object files
 *.o

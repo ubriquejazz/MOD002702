@@ -31,11 +31,11 @@ class Main {
 
     public static void test02() {
         Grupo g = new Grupo();
-        g.leeFicheroCSV("alumnos.csv");
+        g.leeFicheroCSV("data/alumnos.csv");
         System.out.println(g);
     }
 
     public static void main(String[] args) {
-        test01();
+        test02();
     }
 }
