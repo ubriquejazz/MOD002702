@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 public class App {
 
+    private final static String url = "C:/sqlite/db/cine2.db";
+
     public static void connect() {
         Connection conn = null;
         try {			
@@ -25,17 +27,17 @@ public class App {
     }
 
     public static void test_actor() {
-        CineDB cine = new CineDB("C:/sqlite/db/cine2.db");
+        CineDB cine = new CineDB(url);
         int value = cine.insertaActor("Felipe Reyes", "US");
-        //Actor nuevo = cine.datosActor(value);
-        //System.out.println(nuevo);
+        Actor nuevo = cine.datosActor(value);
+        System.out.println(nuevo);
         //ArrayList<Actor> myList = cine.listadoActores();
         //System.out.println(myList.toString());
         cine.closeDB();
     }
 
     public static void test_pelis() {
-        CineDB cine = new CineDB("cine.db");
+        CineDB cine = new CineDB(url);
 
 //        int value = cine.insertaPelicula("Amanece", 1989);
 //        Pelicula nuevo = cine.datosPelicula(value);
@@ -48,7 +50,7 @@ public class App {
     }
     
     public static void test_apelis() {
-        CineDB cine = new CineDB("cine.db");
+        CineDB cine = new CineDB(url);
 
 //        cine.asociaPelicula(1, 1, true);
 //        cine.asociaPelicula(1, 2, false);
@@ -59,8 +61,7 @@ public class App {
         System.out.println(myList.toString());
         
         ArrayList<Pelicula> myList2 = cine.listadoPeliculaPorActor(1);
-        System.out.println(myList2.toString());
-        
+        System.out.println(myList2.toString());     
         
         cine.closeDB();
     }
