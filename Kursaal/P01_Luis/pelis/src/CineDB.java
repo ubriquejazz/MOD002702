@@ -1,5 +1,3 @@
-package com.mycompany.movies;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -34,6 +32,7 @@ public class CineDB {
             System.err.println(sentence + "\n" + ex.getMessage());
         }
     }
+    
     private void executeQueryDB(String consulta) {
         try {
             this.statement.executeQuery(consulta);
@@ -106,9 +105,9 @@ public class CineDB {
             ResultSet rs = this.statement.executeQuery(consulta);
             while(rs.next())  {
                 Actor nuevo = new Actor(
-                rs.getInt("id"),
-             rs.getString("nombre"),
-               rs.getString("pais"));
+                    rs.getInt("id"),
+                    rs.getString("nombre"),
+                    rs.getString("pais"));
                 retVal.add(nuevo);
             }
         } catch (SQLException ex) {
@@ -149,11 +148,11 @@ public class CineDB {
             ResultSet rs = this.statement.executeQuery(consulta);
             if(rs.next())  {
                 retVal = new Pelicula(
-                           rs.getInt("id"),
-                        rs.getString("titulo"),
-                          rs.getInt("anno"),
-                     rs.getBoolean("tieneOscar"),
-                     rs.getDouble("valoracion"));
+                    rs.getInt("id"),
+                    rs.getString("titulo"),
+                    rs.getInt("anno"),
+                    rs.getBoolean("tieneOscar"),
+                    rs.getDouble("valoracion"));
             }
         } 
         catch (SQLException ex) {
@@ -203,9 +202,9 @@ public class CineDB {
             ResultSet rs = this.statement.executeQuery(consulta);
             while(rs.next())  {
                 ActorPelicula nuevo = new ActorPelicula(
-                      rs.getInt("id_peli"),
-                       rs.getInt("id_actor"),
-                    rs.getBoolean("principal"));
+                        rs.getInt("id_peli"),
+                        rs.getInt("id_actor"),
+                        rs.getBoolean("principal"));
                 retVal.add(nuevo);
             }
         } catch (SQLException ex) {

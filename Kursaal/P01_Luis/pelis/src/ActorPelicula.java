@@ -1,9 +1,8 @@
-package com.mycompany.movies;
-
 public class ActorPelicula {
-    public int idPeli;
-    public int idActor;
-    public boolean principal;
+    
+    private int idPeli;
+    private int idActor;
+    private boolean principal;
 
     public ActorPelicula(int idPeli, int idAct, boolean principal) {
         this.idPeli = idPeli;

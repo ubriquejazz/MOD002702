@@ -8,7 +8,12 @@ class Main {
           // Prueba de las propiedades de acceso
           Alumno a = new Alumno("Luis", 16, 9.0);
           System.out.println(a);
-          a.setNombre("");
+          try {
+            a.setNombre("");
+          }
+          catch (IllegalArgumentException e) {
+            System.out.println("Errorcito = " + e.getMessage());
+          }
           a.setEdad(101);
           a.setCalificacion(11);
           System.out.println(a);
@@ -31,8 +36,9 @@ class Main {
     }
 
     public static void main(String[] args) {
-        test_Write();        
+        //test_Write();        
         System.out.println("------------");
-        test_Read();
+        //test_Read();
+        test_Alumno();
     }
 }

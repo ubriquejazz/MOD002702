@@ -1,11 +1,10 @@
-package com.mycompany.movies;
-
 public class Pelicula {
-    public int id;
-    public String titulo;
-    public int anno;
-    public boolean tieneOscar;
-    public double valoracion;
+
+    private int id;
+    private String titulo;
+    private int anno;
+    private boolean tieneOscar;
+    private double valoracion;
 
     public Pelicula(int id, String titulo, int anno, boolean tieneOscar, double valoracion) {
         this.id = id;
