@@ -124,8 +124,8 @@ public class CineDB {
     public int insertaPelicula(String titulo, int anno){ //, boolean tieneOscar, double valoracion) {
         int retVal = 0;
         String sentencia = 
-                "INSERT INTO peliculas (titulo, anno) VALUES (\"" 
-                + titulo + "\", " +  anno + ")";
+                "INSERT INTO peliculas (titulo, anno, tieneOscar) VALUES (\"" 
+                + titulo + "\", " +  anno + ", false)";
         executeDB(sentencia);
         
         String consulta = 
@@ -189,7 +189,7 @@ public class CineDB {
     
     public void asociaPelicula(int idPeli, int idActor, boolean principal) {
         String sentencia = 
-                "INSERT INTO actoresPelicula VALUES ("
+                "INSERT INTO actoresPeliculas VALUES ("
                 + idPeli + "," + idActor + "," + principal + ")";
         executeDB(sentencia);        
     }
@@ -197,12 +197,12 @@ public class CineDB {
     // listado de tabla actoresPelicula
     public ArrayList<ActorPelicula> listadoActorPelicula() {        
         ArrayList<ActorPelicula> retVal = new ArrayList<ActorPelicula>();
-        String consulta = "SELECT * FROM actoresPelicula";
+        String consulta = "SELECT * FROM actoresPeliculas";
         try {
             ResultSet rs = this.statement.executeQuery(consulta);
             while(rs.next())  {
                 ActorPelicula nuevo = new ActorPelicula(
-                        rs.getInt("id_peli"),
+                        rs.getInt("id_pelicula"),
                         rs.getInt("id_actor"),
                         rs.getBoolean("principal"));
                 retVal.add(nuevo);
@@ -216,11 +216,11 @@ public class CineDB {
     // el mas difcil
     public ArrayList<Pelicula> listadoPeliculaPorActor(int idActor) {        
         ArrayList<Pelicula> retVal = new ArrayList<Pelicula>();
-        String consulta = "SELECT * FROM actoresPelicula WHERE id_actor =" + idActor;
+        String consulta = "SELECT * FROM actoresPeliculas WHERE id_actor =" + idActor;
         try {
             ResultSet rs = this.statement.executeQuery(consulta);
             while(rs.next())  {
-                int idx = rs.getInt("id_peli");
+                int idx = rs.getInt("id_pelicula");
                 boolean pral = rs.getBoolean("principal");
                 System.out.println("el actor " + idActor + " trabajo en la peli " + idx);
                 Pelicula nuevo = datosPelicula(idx);

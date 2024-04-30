@@ -1,0 +1,23 @@
+CREATE TABLE peliculas (
+    id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
+    titulo VARCHAR NOT NULL,
+    anno INTEGER NOT NULL,
+    tieneOscar BOOLEAN NOT NULL,
+    valoracion DOUBLE
+);
+
+CREATE TABLE actores (
+    id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
+    nombre VARCHAR NOT NULL,
+    pais VARCHAR NOT NULL
+);
+
+CREATE TABLE actoresPeliculas (
+    id_actor INTEGER NOT NULL
+        REFERENCES actores (id) ON DELETE CASCADE ON UPDATE CASCADE,
+    id_pelicula INTEGER NOT NULL
+        REFERENCES peliculas (id) ON DELETE CASCADE ON UPDATE CASCADE,
+    principal BOOLEAN NOT NULL,
+    PRIMARY KEY (id_actor,
+        id_pelicula)
+);
