@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class App {
 
     // private final static String url = "C:/sqlite/db/cine2.db";
-    private CineDB kino = null;
 
     public static void connect(String url) {
         Connection conn = null;
