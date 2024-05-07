@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 public class App {
 
-    private final static String url = "C:/sqlite/db/cine2.db";
+    // private final static String url = "C:/sqlite/db/cine2.db";
     private CineDB kino = null;
 
-    public static void connect() {
+    public static void connect(String url) {
         Connection conn = null;
         try {			
             conn = DriverManager.getConnection("jdbc:sqlite:"+url);
@@ -66,12 +66,16 @@ public class App {
     
     
     public static void main(String[] args) throws Exception {
-        System.out.println("Bienvenido al cine!");
-        connect();
-        /*
-        CineDB kino = new CineDB(url);
+        if (args.length != 1) {
+            System.out.println("Uso del programa: java -jar pelis.jar FICHERO");
+            System.exit(-1); // sale del programa
+        }
+        
+        System.out.println("Bienvenido al cine " + args[0]);
+        //connect(args[0]);        
+        CineDB kino = new CineDB(args[0]);
         test_apelis(kino);
         kino.closeDB();
-        */
+        
     }
 }
