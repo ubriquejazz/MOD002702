@@ -11,7 +11,7 @@ public class App {
     public static void connect() {
         Connection conn = null;
         try {			
-            conn = DriverManager.getConnection(url);
+            conn = DriverManager.getConnection("jdbc:sqlite:"+url);
             System.out.println("Connection to SQLite has been established.");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -67,11 +67,11 @@ public class App {
     
     public static void main(String[] args) throws Exception {
         System.out.println("Bienvenido al cine!");
+        connect();
+        /*
         CineDB kino = new CineDB(url);
-
         test_apelis(kino);
-        
-
         kino.closeDB();
+        */
     }
 }
