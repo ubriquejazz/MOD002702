@@ -38,19 +38,43 @@ public class Longitud {
         }
         return retVal; 
     }
-    
-    public add(Longitud l2) {
+
+    @Override
+    public boolean equals(Longitud other) {
+        if (this.unidad == other.unidad) {
+            // Si ambas unidades son iguales, se comparan las cantidades
+            return (this.cantidad == that.cantidad);
+        }
+        else {
+            // se compara el valor en metros de cada una.
+            return (this.valorEnMetros() == other.valorEnMetros());
+        }
+    }
+
+    // devuelve negativo si nuestra Longitud es más pequeña
+    public double compareTo(Longitud other) {
+        if (this.unidad == other.unidad) {
+            // Si ambas unidades son iguales, se comparan las cantidades
+            return (this.cantidad - that.cantidad);
+        }
+        else {
+            // se compara el valor en metros de cada una.
+            return (this.valorEnMetros() - other.valorEnMetros());
+        }
+    }
+
+    public add(Longitud other) {
         // Si la unidad es la misma para ambas longitudes, 
         // se conserva la unidad y se suman las cantidades. 
-        if (this.unidad == l2.unidad) {
-            this.cantidad += l2.cantidad;
+        if (this.unidad == other.unidad) {
+            this.cantidad += other.cantidad;
         }
         // Si la unidad es distinta, se pasa todo a metros 
         // y se devuelve el resultado en metros.
         else {
             double metros = this.valorEnMetros();
             this.unidad = Unidad.METERS;
-            this.cantidad = metros + l2.valorEnMetros();
+            this.cantidad = metros + other.valorEnMetros();
         }
     }
 
