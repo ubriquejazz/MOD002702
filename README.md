@@ -1,15 +1,20 @@
 # java
 
-## Como compilar 
-javac libreria.java // oject class
-java Main.java
+Incursion en el modulo de programacion del ciclo de DAW
 
-## C Language
-gcc -c *.c *.h     
-gcc *.o             // a.out
-gcc -o b.out *.o    // b.out
-rm *.h.gch *.o      // clean
+## Libros
+- **Malaga** usado para el año del Romero Vargas
+- **ThinkJava** usado para el año de Algeciras.
 
-## C++ Language 
-g++ *.cpp *.hpp     // a.out
-rm *.hpp.gch        // clean
+## Anglia
+Estudiante durante el curso 2016/17 en Cambridge, UK.
+
+## Jerez
+Curso 2022/23
+
+## Kursaal
+Curso 2023/2024
+
+## Notas para compilar 
+    javac libreria.java // oject class
+    java Main.java
